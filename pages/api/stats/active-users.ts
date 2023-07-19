@@ -8,19 +8,9 @@ import qs from 'qs';
  *     summary: Retrieve the number of active users that logged in.
  *     tags:
  *       - stats
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
- *       - in: header
- *         name: Authorization
- *         schema:
- *           type: string
- *         required: true
- *         description: use access token to access Auth0 Management API.
- *       - in: cookie
- *         name: appSession
- *         schema:
- *           type: string
- *         required: true
- *         description: use session cookie to access API with auth required.
  *       - in: query
  *         name: from
  *         schema:

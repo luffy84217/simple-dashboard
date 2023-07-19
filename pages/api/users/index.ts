@@ -9,18 +9,6 @@ import qs from 'qs';
  *     tags:
  *       - users
  *     parameters:
- *       - in: header
- *         name: Authorization
- *         schema:
- *           type: string
- *         required: true
- *         description: use access token to access Auth0 Management API.
- *       - in: cookie
- *         name: appSession
- *         schema:
- *           type: string
- *         required: true
- *         description: use session cookie to access API with auth required.
  *       - in: query
  *         name: fields
  *         schema:

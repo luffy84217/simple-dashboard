@@ -8,19 +8,10 @@ import qs from 'qs';
  *     summary: Retrieve current log in user details.
  *     tags:
  *       - user
+ *     security:
+ *       - bearerAuth: []
+ *       - cookieAuth: []
  *     parameters:
- *       - in: header
- *         name: Authorization
- *         schema:
- *           type: string
- *         required: true
- *         description: use access token to access Auth0 Management API.
- *       - in: cookie
- *         name: appSession
- *         schema:
- *           type: string
- *         required: true
- *         description: use session cookie to access API with auth required.
  *       - in: query
  *         name: fields
  *         schema:
@@ -67,19 +58,6 @@ import qs from 'qs';
  *     summary: Update current log in user.
  *     tags:
  *       - user
- *     parameters:
- *       - in: header
- *         name: Authorization
- *         schema:
- *           type: string
- *         required: true
- *         description: use access token to access Auth0 Management API.
- *       - in: cookie
- *         name: appSession
- *         schema:
- *           type: string
- *         required: true
- *         description: use session cookie to access API with auth required.
  *     security:
  *       - bearerAuth: []
  *       - cookieAuth: []

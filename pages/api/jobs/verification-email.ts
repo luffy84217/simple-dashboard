@@ -7,13 +7,6 @@ import type { NextApiRequest, NextApiResponse } from 'next';
  *     summary: Send an email to the specified user that asks them to click a link to verify their email address.
  *     tags:
  *       - job
- *     parameters:
- *       - in: header
- *         name: Authorization
- *         schema:
- *           type: string
- *         required: true
- *         description: use access token to access Auth0 Management API.
  *     security:
  *       - bearerAuth: []
  *     requestBody:
