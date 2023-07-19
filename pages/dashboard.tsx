@@ -131,7 +131,7 @@ function Dashboard() {
   return (
     <>
       {isLoading && <Loading />}
-      {users && (
+      {users && !isLoading && (
         <div className="mb-5" data-testid="dashboard">
           <Row className="mb-5">
             <Col sm="4">
