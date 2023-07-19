@@ -116,6 +116,7 @@ function Profile() {
         },
         body: JSON.stringify({ password, connection: 'Username-Password-Authentication' }, null, 2)
       });
+      errMsg.textContent = '';
       document.getElementById('password-success-msg').textContent = 'Your password has been reset successfully.';
       setOldPassword('');
       setPassword('');
