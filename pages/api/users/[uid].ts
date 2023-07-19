@@ -91,4 +91,4 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   } catch (error) {
     res.status(error.response.status || 500).json(error.response.data);
   }
-}
+};

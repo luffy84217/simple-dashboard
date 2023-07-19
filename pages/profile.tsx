@@ -192,7 +192,7 @@ function Profile() {
                 <Button
                   color="primary"
                   onClick={handlePasswordSaveClick}
-                  disabled={(!oldPassword || !password || !newPassword) || isProcessing}
+                  disabled={!oldPassword || !password || !newPassword || isProcessing}
                 >
                   {isProcessing ? 'Processing' : 'Save'}
                 </Button>
