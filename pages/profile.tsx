@@ -26,6 +26,7 @@ function Profile() {
   const [oldPassword, setOldPassword] = useState('');
   const [password, setPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
+  const [isProcessing, setIsProcessing] = useState(false);
 
   const toggle = () => {
     setShowModal(!showModal);
@@ -95,6 +96,7 @@ function Profile() {
     }
 
     try {
+      setIsProcessing(true);
       const accessToken = await getAccessToken();
       // IMPORTANT: Since there's no endpoint to validate current old password, authentication instead.
       const res = await fetch(`/api/auth/validate`, {
@@ -123,6 +125,8 @@ function Profile() {
       setNewPassword('');
     } catch (error) {
       errMsg.textContent = error;
+    } finally {
+      setIsProcessing(false);
     }
   };
 
@@ -188,9 +192,9 @@ function Profile() {
                 <Button
                   color="primary"
                   onClick={handlePasswordSaveClick}
-                  disabled={!oldPassword || !password || !newPassword}
+                  disabled={(!oldPassword || !password || !newPassword) || isProcessing}
                 >
-                  Save
+                  {isProcessing ? 'Processing' : 'Save'}
                 </Button>
                 <p id="password-error-msg" className="text-danger"></p>
                 <p id="password-success-msg" className="text-success"></p>
