@@ -1,4 +1,4 @@
-import { handleAuth, handleLogin, handleProfile } from '@auth0/nextjs-auth0';
+import { handleAuth, handleCallback, handleLogin, handleProfile } from '@auth0/nextjs-auth0';
 
 /**
  * @swagger
@@ -114,5 +114,12 @@ export default handleAuth({
       scope: 'openid profile email'
     }
   }),
-  profile: handleProfile({ refetch: true })
+  profile: handleProfile({ refetch: true }),
+  callback: async (req, res) => {
+    try {
+      await handleCallback(req, res);
+    } catch (error) {
+      res.redirect('/');
+    }
+  }
 });
